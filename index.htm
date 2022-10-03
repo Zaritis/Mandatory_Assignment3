@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+</head>
+<body>
+    <h1>String Duplication</h1>
+    <div id="app">
+        <div style="border:1pt; border-style: solid; padding: 20pt;">
+            <input v-model="input" type="text" placeholder="Type a message here" id="msgInput"/>
+            <input v-model="howMany" type="number"id="amount"/>
+            <button class="btn btn-primary" v-on:click="show(input,howMany)" id="showButton">Show message</button>
+            <p v-if="howMany <= 0">{{errorMSG}}</p>
+            <!-- Above this If howMany is less than or equal to 0 show errorMSG
+            This could also have been put into the show method itself and have the same effect but on method level. -->
+            <p else-if="howMany > 0">{{message}}</p>
+            <!-- Above this displays the result of the show() method if howMany has a value higher than 0 -->
+
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
